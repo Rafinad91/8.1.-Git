@@ -29,7 +29,7 @@
 
 
 ## Задание 3
-
+![alt text](https://github.com/Rafinad91/8.1.-Git/blob/main/9.2/img/%D0%94%D0%B8%D1%81%D0%BA%20C.png)
 
 
 
