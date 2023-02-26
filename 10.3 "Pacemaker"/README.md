@@ -48,10 +48,10 @@ Corosync - программный продукт, позволяющий реа�
 
 ## Задание 3
 
-![alt text]())
+![alt text](https://github.com/Rafinad91/Homework-Netology/blob/main/10.3%20%22Pacemaker%22/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%203.png)
 
 
-
-![alt text]()
 
 ## Задание 4
+
+![alt text](https://github.com/Rafinad91/Homework-Netology/blob/main/10.3%20%22Pacemaker%22/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B54.png)
