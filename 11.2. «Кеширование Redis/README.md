@@ -14,12 +14,12 @@
 
 ## Задание 2
 
-![alt text]()
+![alt text](https://github.com/Rafinad91/Homework-Netology/blob/main/11.2.%20%C2%AB%D0%9A%D0%B5%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20Redis/img/memcached.png)
 
 
 ## Задание 3
 
-![alt text]()
+![alt text](https://github.com/Rafinad91/Homework-Netology/blob/main/11.2.%20%C2%AB%D0%9A%D0%B5%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20Redis/img/add%20key.png)
 
 
 ## Задание 4
