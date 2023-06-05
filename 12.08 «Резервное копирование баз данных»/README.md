@@ -13,8 +13,10 @@
 1.3.* Возможен ли кейс, когда при поломке базы происходило моментальное переключение на работающую или починенную базу данных.
 
 - Ответ:
-1.1 Для восстановления данных в полном объему потребуется воспользоваться полное резервное копирование (Full backup)
+1.1 Для восстановления данных в полном объему потребуется воспользоваться полное резервное копирование (Full backup).
+
 1.2 Для восстаовления данных за последний час воспользуемся инкрементным резервным копированием, так как его можно настроить на опредленный период создания новой полной копии.
+
 1.3 Такое возможно при использование репликации базы данных, например используя Drbd.
 
 ## Задание 2
@@ -29,34 +31,57 @@
     pg_restore --dbname=dvdrental --create --verbose /var/tmp/backup.tar 
 
 2.2 Процесс можно автоматизировать, например написать скрипт, сделать фал исполняемым, с помощью крона запскать задание. Либо воспользоваться PgAdmin.
+
 Пример скрипта с habr по созданию бэкапа:
 
-# ~/pg_backup.sh
+- ~/pg_backup.sh
+
 db_name=dbname
+
 db_user=dbuser
+
 db_host=host
+
 backupfolder=~/postgresql/backups 
+
 recipient_email=youremail@example.ru
-# Сколько дней хранить файлы
+
+- Сколько дней хранить файлы
+
 keep_day=30
+
 sqlfile=$backupfolder/database-$(date +%d-%m-%Y_%H-%M-%S).sql
+
 zipfile=$backupfolder/database-$(date +%d-%m-%Y_%H-%M-%S).zip
+
 mkdir -p $backupfolder
 
 if pg_dump -U $db_user -h $db_host $db_name > $sqlfile ; then
+
    echo 'Sql dump created'
+
 else
+
    echo 'pg_dump return non-zero code' | mailx -s 'No backup was created!' $recipient_email
+
    exit
+
 fi
 
 if gzip -c $sqlfile > $zipfile; then
+
    echo 'The backup was successfully compressed'
+
 else
+
    echo 'Error compressing backup' | mailx -s 'Backup was not created!' $recipient_email
+
    exit
+
 fi
+
 rm $sqlfile 
+
 echo $zipfile | mailx -s -a $sqlfile 'Backup was successfully created' $recipient_email
  
 find $backupfolder -mtime +$keep_day -delete
